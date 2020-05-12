@@ -641,7 +641,7 @@
 	}
 ]
        );
-       var employee = employeeDetails.at('0x31B9d6beb2E0c23B84B87097E9b26fCfAfC661A8');
+       var employee = employeeDetails.at('0x5228a81DD1CF2764C75bf6A383E8F6aED3dc8200');
 
 	   var employer = web3.eth.contract([
 	{
@@ -652,13 +652,19 @@
 	},
 	{
 		"constant": true,
-		"inputs": [],
-		"name": "countstudentss",
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_address",
+				"type": "address"
+			}
+		],
+		"name": "checkELigble",
 		"outputs": [
 			{
-				"internalType": "uint256",
+				"internalType": "string",
 				"name": "",
-				"type": "uint256"
+				"type": "string"
 			}
 		],
 		"payable": false,
@@ -674,12 +680,12 @@
 				"type": "address"
 			}
 		],
-		"name": "getDomain",
+		"name": "checkExp",
 		"outputs": [
 			{
-				"internalType": "string",
+				"internalType": "uint256",
 				"name": "",
-				"type": "string"
+				"type": "uint256"
 			}
 		],
 		"payable": false,
@@ -738,94 +744,18 @@
 		"type": "function"
 	},
 	{
-		"constant": true,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_address",
-				"type": "address"
-			}
-		],
-		"name": "getExperience",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "getemloyeess",
-		"outputs": [
-			{
-				"internalType": "address[]",
-				"name": "",
-				"type": "address[]"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
 		"constant": false,
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "_address",
-				"type": "address"
-			},
-			{
 				"internalType": "uint256",
-				"name": "_empid",
+				"name": "_value",
 				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "_empname",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_company",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_cadar",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_prevsalary",
-				"type": "uint256"
-			},
-			{
-				"internalType": "bool",
-				"name": "_terminated",
-				"type": "bool"
-			},
-			{
-				"internalType": "string",
-				"name": "_domain",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_feedBack",
-				"type": "string"
 			}
 		],
-		"name": "insertDetails",
+		"name": "setEligibilty",
 		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
+		"payable": true,
+		"stateMutability": "payable",
 		"type": "function"
 	},
 	{
@@ -842,111 +772,20 @@
 				"type": "uint256"
 			}
 		],
-		"name": "setExperience",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_address",
-				"type": "address"
-			},
-			{
-				"internalType": "string",
-				"name": "_feedBack",
-				"type": "string"
-			}
-		],
-		"name": "setfeedBack",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_address",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_empid",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "_empname",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_company",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_cadar",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_experience",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_prevsalary",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "_domain",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_feedBack",
-				"type": "string"
-			}
-		],
-		"name": "updatedetails",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "valAddress",
-				"type": "address"
-			}
-		],
-		"name": "validateEmployee",
+		"name": "setExp",
 		"outputs": [
 			{
-				"internalType": "bool",
+				"internalType": "string",
 				"name": "",
-				"type": "bool"
+				"type": "string"
 			}
 		],
-		"payable": false,
-		"stateMutability": "view",
+		"payable": true,
+		"stateMutability": "payable",
 		"type": "function"
 	}
 ]);
-		var employee_second = employer.at('');
-
+		var employee_second = employer.at('0x00c08Bb23C1e9FCd3881FD3868691d0af3C98a62');
 
 
 
@@ -985,7 +824,7 @@
        $("#Button_getExperience").click(function() {
            employee.getExperience($("#getEmpAddr").val() ,function (error , result) {
                if(!error) {
-                   $("#get_experience").html(result[0]+"<br/>");
+                   $("#get_experience").html(result +"<br/>");
 			   }
 			   else
 			   		console.log(error);
@@ -1012,7 +851,7 @@
 			});
 		});
 		$("#Button_set_Experience").click(function() {
-			employee_second.setExp($("#set_address").val() , ("#set_Exp").val() , (err, res) => {
+			employee_second.setExp($("#set_address").val() , $("#set_Exp").val() ,(err, res) => {
 				if(err){
 					console.log(err);
 				}
@@ -1025,7 +864,23 @@
 				}
 			});
 		});
-
+		$("#Button_check_Experience").click(function() {
+			employee_second.checkExp($("#check_exp_address").val() , function (error , result) {
+				if(!error) {
+					$("#get_emp_ex").html(result + "<br/>"); 
+				}
+				
+			});
+		});
+		$("#Button_emp_account_details").click(function() {
+			employee_second.getEmployeeDetails($("#get_emp_address").val() , function (error , result) {
+				if(!error) {
+					$("#get_emp_details").html(result[0]+ "<br/>" + result[1] + "<br/>" +result[2] + "<br/>" +result[3] + "<br/>" +result[4] + "<br/>" +result[5] + "<br/>" +result[6]);
+				}
+				else
+					console.log(error);
+			});
+		});
 
 
     
