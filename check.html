@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Profile Management</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Employee Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <script src="./node_modules/web3/dist/web3.min.js"></script>
 
 </head>
 <body>
-    <div class="container" id="first">
+    <div class="container">
         
         <div class="form">
             <h1 class="ml-3"> Insert Details</h1>
@@ -77,13 +77,7 @@
             </div>
         </div>
         <div class="form">
-			<h1>Set Experience</h1>
-			<div class="form-group row">
-                <label for="ExperienceId" class="col-sm-2 col-form-label">Employee Address</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="Exp_Address" placeholder="Address">
-                </div>
-            </div>
+            <h1>Set Experience</h1>
             <div class="form-group row">
                 <label for="Experience" class="col-sm-2 col-form-label">Experience</label>
                 <div class="col-sm-10">
@@ -98,13 +92,7 @@
             </div>
         </div>
         <div class="form">
-			<h1>Update Details</h1>
-			<div class="form-group row">
-                <label for="updateEmpAddress" class="col-sm-2 col-form-label">Employee Address</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="update_empaddr" placeholder="Address">
-                </div>
-            </div>
+            <h1>Update Details</h1>
             <div class="form-group row">
                 <label for="updateEmpid" class="col-sm-2 col-form-label">Employee ID</label>
                 <div class="col-sm-10">
@@ -161,165 +149,43 @@
             </div>
         </div>
         <div>
-			<h1>Get Employee Details</h1>
-			<div class="form-group row">
-				<label for="getDetails" class="col-sm-2 col-form-label">Employee Address</label>
-                <div class="col-sm-10">
-					<input type="text" class="form-control" id="getEmpAddress" placeholder="Employee Address">
-					<div class="card">
-						<div class="card-body">
-						  <h5 class="card-title">Details:</h5>
-						  <p class="card-text" id="get_details"></p>
-						</div>
-					</div>
-					<button type="button" id="Button_getEmployeeDetails" class="btn btn-outline-primary mt-3">Get Details</button>
+            <h1>Get Employee Details</h1>
+            <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Details:</h5>
+                  <p class="card-text" id="get_details"></p>
                 </div>
-			</div>
-            
-           
+            </div>
+            <button type="button" id="Button_getEmployeeDetails" class="btn btn-outline-primary mt-3">Get Details</button>
         </div>
         <div>
-			<h1>Get Employee Experience</h1>
-			<div class="form-group row">
-				<label for="getExperienceAdd" class="col-sm-2 col-form-label">Employee Address</label>
-				<div class="col-sm-10">
-					<input type="text" class="form-control" id="getEmpAddr" placeholder="Employee Address">
-					<div class="card">
-						<div class="card-body">
-						  <h5 class="card-title">Experience:</h5>
-						  <p class="card-text" id="get_experience"></p>
-						</div>
-					</div>
-					<button type="button" id="Button_getExperience" class="btn btn-outline-primary mt-3">Get Experience</button>
-				</div>
-			</div>
-            
+            <h1>Get Employee Experience</h1>
+            <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Experience:</h5>
+                  <p class="card-text" id="get_experience"></p>
+                </div>
+            </div>
+            <button type="button" id="Button_getExperience" class="btn btn-outline-primary mt-3">Get Experience</button>
         </div>
         <div>
-			<h1>Get Employee Accounts</h1>
-			<div class="form-group row">
-				<label for="getAccounts" class="col-sm-2 col-form-label">Employee Accounts</label>
-				<div class="col-sm-10">
-					<div class="card">
-						<div class="card-body">
-						  <h5 class="card-title">Accounts:</h5>
-						  <p class="card-text" id="get_accounts"></p>
-						</div>
-					</div>
-					<button type="button" id="Button_accounts" class="btn btn-outline-primary mt-3">Get Accounts</button>
-				</div>
-            
+            <h1>Get Employee Accounts</h1>
+            <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Accounts:</h5>
+                  <p class="card-text" id="get_accounts"></p>
+                </div>
+            </div>
+            <button type="button" id="Button_accounts" class="btn btn-outline-primary mt-3">Get Accounts</button>
         </div>
 
-	</div>
-	<div class="container" id="second">
-		<div id="seteligibility">
-			<h1>Set Eligibility</h1>
-			<div class="form-group row">
-				<label for="setEligibility" class="col-sm-2 col-form-label">Set Eligibility</label>
-				<div class="col-sm-10">
-					<input type="text" class="form-control" id="set_eligibility" placeholder="Set Eligibility">
-				</div>
-			</div>
-			<div class="form-group row">
-				<label for="seteligibility2" class="col-sm-2 col-form-label"></label>
-				<div class="col-sm-10">
-					<button type="button" id="Button_setEligibility" class="btn btn-outline-primary">Set Eligibility</button>
-				</div>
-			</div>
-		</div>
-		<div id="setexperience">
-			<h1>Set Experience</h1>
-			<div class="form-group row">
-				<label for="expAddress" class="col-sm-2 col-form-label">Employee Address</label>
-				<div class="col-sm-10">
-					<input type="text" class="form-control" id="set_address" placeholder="Address">
-				</div>
-			</div>
-			<div class="form-group row">
-				<label for="setExp" class="col-sm-2 col-form-label">Set Experience</label>
-				<div class="col-sm-10">
-					<input type="text" class="form-control" id="set_Exp" placeholder="Experience">
-				</div>
-			</div>
-			<div class="form-group row">
-				<label for="setExperience2" class="col-sm-2 col-form-label"></label>
-				<div class="col-sm-10">
-					<button type="button" id="Button_set_Experience" class="btn btn-outline-primary">Set Experience</button>
-				</div>
-			</div>
-
-		</div>
-		<div id="checkeligibility">
-			<h1>Check Eligibility</h1>
-			<div class="form-group row">
-				<label for="checkEligibility" class="col-sm-2 col-form-label">Employee Address</label>
-				<div class="col-sm-10">
-					<input type="text" class="form-control" id="check_address" placeholder="Address">
-				</div>
-			</div>
-			<div class="form-group row">
-				<label for="check_eligibilty" class="col-sm-2 col-form-label"></label>
-				<div class="col-sm-10">
-					<div class="card">
-						<div class="card-body">
-						  <h5 class="card-title">Eligibility:</h5>
-						  <p class="card-text" id="get_emp_el"></p>
-						</div>
-					</div>
-					<button type="button" id="Button_check_Eligibility" class="btn btn-outline-primary">Check Eligibility</button>
-				</div>
-			</div>
-
-		</div>
-		<div id="checkexperience">
-			<h1>Check Experience</h1>
-			<div class="form-group row">
-				<label for="check_experience" class="col-sm-2 col-form-label">Employee Address</label>
-				<div class="col-sm-10">
-					<input type="text" class="form-control" id="check_exp_address" placeholder="Address">
-				</div>
-			</div>
-			<div class="form-group row">
-				<label for="check_exp" class="col-sm-2 col-form-label"></label>
-				<div class="col-sm-10">
-					<div class="card">
-						<div class="card-body">
-						  <h5 class="card-title">Experience:</h5>
-						  <p class="card-text" id="get_emp_ex"></p>
-						</div>
-					</div>
-					<button type="button" id="Button_check_Experience" class="btn btn-outline-primary">Check Experience</button>
-				</div>
-			</div>
-		</div>
-		<div id="getemployeedetails">
-			<h1>Get Employee Details</h1>
-			<div class="form-group row">
-				<label for="get_address" class="col-sm-2 col-form-label">Employee Address</label>
-				<div class="col-sm-10">
-					<input type="text" class="form-control" id="get_emp_address" placeholder="Address">
-				</div>
-			</div>
-			<div class="form-group row">
-				<label for="displayempinfo" class="col-sm-2 col-form-label"></label>
-				<div class="col-sm-10">
-					<div class="card">
-						<div class="card-body">
-						  <h5 class="card-title">Employee Details:</h5>
-						  <p class="card-text" id="get_emp_details"></p>
-						</div>
-					</div>
-					<button type="button" id="Button_emp_account_details" class="btn btn-outline-primary mt-3">Get Details</button>
-				</div>
-            
-		</div>
+        
 
 
+       
 
 
-
-	</div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -641,393 +507,46 @@
 	}
 ]
        );
-       var employee = employeeDetails.at('0x31B9d6beb2E0c23B84B87097E9b26fCfAfC661A8');
-
-	   var employer = web3.eth.contract([
-	{
-		"inputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "constructor"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "countstudentss",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_address",
-				"type": "address"
-			}
-		],
-		"name": "getDomain",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_address",
-				"type": "address"
-			}
-		],
-		"name": "getEmployeeDetails",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			},
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			},
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_address",
-				"type": "address"
-			}
-		],
-		"name": "getExperience",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "getemloyeess",
-		"outputs": [
-			{
-				"internalType": "address[]",
-				"name": "",
-				"type": "address[]"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_address",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_empid",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "_empname",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_company",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_cadar",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_prevsalary",
-				"type": "uint256"
-			},
-			{
-				"internalType": "bool",
-				"name": "_terminated",
-				"type": "bool"
-			},
-			{
-				"internalType": "string",
-				"name": "_domain",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_feedBack",
-				"type": "string"
-			}
-		],
-		"name": "insertDetails",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_address",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_experience",
-				"type": "uint256"
-			}
-		],
-		"name": "setExperience",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_address",
-				"type": "address"
-			},
-			{
-				"internalType": "string",
-				"name": "_feedBack",
-				"type": "string"
-			}
-		],
-		"name": "setfeedBack",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_address",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_empid",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "_empname",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_company",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_cadar",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_experience",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_prevsalary",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "_domain",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_feedBack",
-				"type": "string"
-			}
-		],
-		"name": "updatedetails",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "valAddress",
-				"type": "address"
-			}
-		],
-		"name": "validateEmployee",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	}
-]);
-		var employee_second = employer.at('');
-
-
-
-
-       
+       var employee = employeeDetails.at('0x1BE2EF57403C70E26F4932831d8e11E79b6245fF');
+      
        $("#Button_insertDetails").click(function() {
             employee.insertDetails($("#address").val(), $("#empid").val(), $("#empname").val(), $("#cmpname").val(), $("#cadar").val() , $("#prevsal").val(), $("#terminated").val(), $("#domain").val(),$("#feedback").val(), (err, res) => {
            if (err){
             console.log(err);
             }    
-        }); 
+        }) 
        });
 
        $("#Button_setExperience").click(function() {
-           employee.setExperience($("#Exp_Address").val() ,$("#experience").val(), (err, res) => {
+           employee.setExperience($("#experience").val(), (err, res) => {
         if (err){
             console.log(err);
             }    
-        });
+        })
        });
        $("#Button_updateDetails").click(function() {
-           employee.updatedetails($("#update_empaddr").val() ,$("#update_empid").val(), $("#update_empname").val(), $("#update_cmpname").val(), $("#update_cadar").val(),$("#update_Experience").val(),$("#update_prevsal").val(), $("#update_domain").val(),$("#update_feedback").val(), (err, res) => {
+           employee.updatedetails($("#update_empid").val(), $("#update_empname").val(), $("#update_cmpname").val(), $("#update_cadar").val(),$("#update_Experience").val(),$("#update_prevsal").val(), $("#update_domain").val(),$("#update_feedback").val(), (err, res) => {
         if (err){
             console.log(err);
             }    
-        });
+        })
        });
        $("#Button_getEmployeeDetails").click(function() {
-            employee.getEmployeeDetails($("#getEmpAddress").val() ,function (error , result) {
+            employee.getEmployeeDetails(function (error , result) {
                 if(!error) {
-                    $("#get_details").html(result[0]+ "<br/>" + result[1] + "<br/>" +result[2] + "<br/>" +result[3] + "<br/>" +result[4] + "<br/>" +result[5] + "<br/>" +result[6]);
+                    $("#get_details").html(result[0]+ "<br>" + result[1] + "<br>" +result[2] + "<br>" +result[3] + "<br>" +result[4] + "<br>" +result[5] + "<br>" +result[6]);
                 }
                 else 
                     console.log(error);
-            });  
+            });
        });
-       $("#Button_getExperience").click(function() {
-           employee.getExperience($("#getEmpAddr").val() ,function (error , result) {
+       $("#Button_getExperience").click(function () {
+           employee.getExperience(function (error , result) {
                if(!error) {
-                   $("#get_experience").html(result[0]+"<br/>");
-			   }
-			   else
-			   		console.log(error);
+                   $("#get_experience").html(result[0]);
+               }
            });
-	   });
-	   $("#Button_accounts").click(function() {
-       		employee.getemloyeess(function(error, result) {
-           if (!error) {
-			   for(i=0;i<result.length;i++){
-               $("#get_accounts").append(result[i]+'<br/>');
-			   console.log(result[i]);
-			   }
-           } else
-                console.log(error);
        });
-
-	});
-
-		$("#Button_setEligibility").click(function() {
-			employee_second.setEligibilty($("#set_eligibility").val(),(err ,res) => {
-				if(err){
-					console.log(err);
-				}
-			});
-		});
-		$("#Button_set_Experience").click(function() {
-			employee_second.setExp($("#set_address").val() , ("#set_Exp").val() , (err, res) => {
-				if(err){
-					console.log(err);
-				}
-			});
-		});
-		$("#Button_check_Eligibility").click(function() {
-			employee_second.checkELigble($("#check_address").val() , function (error , result) {
-				if(!error) {
-					$("#get_emp_el").html(result[0] + "<br/>");
-				}
-			});
-		});
-
-
-
     
     </script>
 </body>
