@@ -1,889 +1,1220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Profile Management</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+   
+	<meta property="og:type" content="article" />
+
+    <!-- Website Title -->
+    <title>Bro-Code</title>
+    
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap&subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600&display=swap&subset=latin-ext" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/swiper.css" rel="stylesheet">
+	<link href="css/magnific-popup.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
     <script src="./node_modules/web3/dist/web3.min.js"></script>
-
-</head>
-<body>
-    <div class="container" id="first">
-        
-        <div class="form">
-            <h1 class="ml-3"> Insert Details</h1>
-            <div class="form-group row">
-                <label for="address" class="col-sm-2 col-form-label">Address</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="address" placeholder="Address">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="empid" class="col-sm-2 col-form-label">Employee ID</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="empid" placeholder="ID">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="empName" class="col-sm-2 col-form-label">Employee Name</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="empname" placeholder="Name">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="CompanyName" class="col-sm-2 col-form-label">Company Name</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="cmpname" placeholder="Company">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="Cadar" class="col-sm-2 col-form-label">Cadar</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="cadar" placeholder="Cadar">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="prevsal" class="col-sm-2 col-form-label">Previous Salary</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="prevsal" placeholder="Previous salary">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="Terminated" class="col-sm-2 col-form-label">Terminated</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="terminated" placeholder="True or False">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="Domain" class="col-sm-2 col-form-label">Domain</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="domain" placeholder="Domains">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="Feedback" class="col-sm-2 col-form-label">Feedback</label>
-                <div class="col-sm-10">
-                    <textarea class="form-control" aria-label="With textarea" id="feedback" placeholder="Feedback"></textarea>
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="insertdetails" class="col-sm-2 col-form-label"></label>
-                <div class="col-sm-10">
-                    <button type="button" id="Button_insertDetails" class="btn btn-outline-primary">Insert Details</button>
-                </div>
-            </div>
-        </div>
-        <div class="form">
-			<h1>Set Experience</h1>
-			<div class="form-group row">
-                <label for="ExperienceId" class="col-sm-2 col-form-label">Employee Address</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="Exp_Address" placeholder="Address">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="Experience" class="col-sm-2 col-form-label">Experience</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="experience" placeholder="Experience">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="setexperience" class="col-sm-2 col-form-label"></label>
-                <div class="col-sm-10">
-                    <button type="button" id="Button_setExperience" class="btn btn-outline-primary">Set Experience</button>
-                </div>
-            </div>
-        </div>
-        <div class="form">
-			<h1>Update Details</h1>
-			<div class="form-group row">
-                <label for="updateEmpAddress" class="col-sm-2 col-form-label">Employee Address</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="update_empaddr" placeholder="Address">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="updateEmpid" class="col-sm-2 col-form-label">Employee ID</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="update_empid" placeholder="ID">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="updateEmpName" class="col-sm-2 col-form-label">Employee Name</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="update_empname" placeholder="Name">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="updateCompanyName" class="col-sm-2 col-form-label">Company Name</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="update_cmpname" placeholder="Company">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="updateCadar" class="col-sm-2 col-form-label">Cadar</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="update_cadar" placeholder="Cadar">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="updateExperience" class="col-sm-2 col-form-label">Experience</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="update_Experience" placeholder="Experience">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="updatePrevsal" class="col-sm-2 col-form-label">Previous Salary</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="update_prevsal" placeholder="Previous salary">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="updateDomain" class="col-sm-2 col-form-label">Domain</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="update_domain" placeholder="Domains">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="updateFeedback" class="col-sm-2 col-form-label">Feedback</label>
-                <div class="col-sm-10">
-                    <textarea class="form-control" aria-label="With textarea" id="update_feedback" placeholder="Feedback"></textarea>
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="updateDetails" class="col-sm-2 col-form-label"></label>
-                <div class="col-sm-10">
-                    <button type="button" id="Button_updateDetails" class="btn btn-outline-primary">Update Details</button>
-                </div>
-            </div>
-        </div>
-        <div>
-			<h1>Get Employee Details</h1>
-			<div class="form-group row">
-				<label for="getDetails" class="col-sm-2 col-form-label">Employee Address</label>
-                <div class="col-sm-10">
-					<input type="text" class="form-control" id="getEmpAddress" placeholder="Employee Address">
-					<div class="card">
-						<div class="card-body">
-						  <h5 class="card-title">Details:</h5>
-						  <p class="card-text" id="get_details"></p>
-						</div>
-					</div>
-					<button type="button" id="Button_getEmployeeDetails" class="btn btn-outline-primary mt-3">Get Details</button>
-                </div>
-			</div>
-            
-           
-        </div>
-        <div>
-			<h1>Get Employee Experience</h1>
-			<div class="form-group row">
-				<label for="getExperienceAdd" class="col-sm-2 col-form-label">Employee Address</label>
-				<div class="col-sm-10">
-					<input type="text" class="form-control" id="getEmpAddr" placeholder="Employee Address">
-					<div class="card">
-						<div class="card-body">
-						  <h5 class="card-title">Experience:</h5>
-						  <p class="card-text" id="get_experience"></p>
-						</div>
-					</div>
-					<button type="button" id="Button_getExperience" class="btn btn-outline-primary mt-3">Get Experience</button>
-				</div>
-			</div>
-            
-        </div>
-        <div>
-			<h1>Get Employee Accounts</h1>
-			<div class="form-group row">
-				<label for="getAccounts" class="col-sm-2 col-form-label">Employee Accounts</label>
-				<div class="col-sm-10">
-					<div class="card">
-						<div class="card-body">
-						  <h5 class="card-title">Accounts:</h5>
-						  <p class="card-text" id="get_accounts"></p>
-						</div>
-					</div>
-					<button type="button" id="Button_accounts" class="btn btn-outline-primary mt-3">Get Accounts</button>
-				</div>
-            
-        </div>
-
-	</div>
-	<div class="container" id="second">
-		<div id="seteligibility">
-			<h1>Set Eligibility</h1>
-			<div class="form-group row">
-				<label for="setEligibility" class="col-sm-2 col-form-label">Set Eligibility</label>
-				<div class="col-sm-10">
-					<input type="text" class="form-control" id="set_eligibility" placeholder="Set Eligibility">
-				</div>
-			</div>
-			<div class="form-group row">
-				<label for="seteligibility2" class="col-sm-2 col-form-label"></label>
-				<div class="col-sm-10">
-					<button type="button" id="Button_setEligibility" class="btn btn-outline-primary">Set Eligibility</button>
-				</div>
-			</div>
-		</div>
-		<div id="setexperience">
-			<h1>Set Experience</h1>
-			<div class="form-group row">
-				<label for="expAddress" class="col-sm-2 col-form-label">Employee Address</label>
-				<div class="col-sm-10">
-					<input type="text" class="form-control" id="set_address" placeholder="Address">
-				</div>
-			</div>
-			<div class="form-group row">
-				<label for="setExp" class="col-sm-2 col-form-label">Set Experience</label>
-				<div class="col-sm-10">
-					<input type="text" class="form-control" id="set_Exp" placeholder="Experience">
-				</div>
-			</div>
-			<div class="form-group row">
-				<label for="setExperience2" class="col-sm-2 col-form-label"></label>
-				<div class="col-sm-10">
-					<button type="button" id="Button_set_Experience" class="btn btn-outline-primary">Set Experience</button>
-				</div>
-			</div>
-
-		</div>
-		<div id="checkeligibility">
-			<h1>Check Eligibility</h1>
-			<div class="form-group row">
-				<label for="checkEligibility" class="col-sm-2 col-form-label">Employee Address</label>
-				<div class="col-sm-10">
-					<input type="text" class="form-control" id="check_address" placeholder="Address">
-				</div>
-			</div>
-			<div class="form-group row">
-				<label for="check_eligibilty" class="col-sm-2 col-form-label"></label>
-				<div class="col-sm-10">
-					<div class="card">
-						<div class="card-body">
-						  <h5 class="card-title">Eligibility:</h5>
-						  <p class="card-text" id="get_emp_el"></p>
-						</div>
-					</div>
-					<button type="button" id="Button_check_Eligibility" class="btn btn-outline-primary">Check Eligibility</button>
-				</div>
-			</div>
-
-		</div>
-		<div id="checkexperience">
-			<h1>Check Experience</h1>
-			<div class="form-group row">
-				<label for="check_experience" class="col-sm-2 col-form-label">Employee Address</label>
-				<div class="col-sm-10">
-					<input type="text" class="form-control" id="check_exp_address" placeholder="Address">
-				</div>
-			</div>
-			<div class="form-group row">
-				<label for="check_exp" class="col-sm-2 col-form-label"></label>
-				<div class="col-sm-10">
-					<div class="card">
-						<div class="card-body">
-						  <h5 class="card-title">Experience:</h5>
-						  <p class="card-text" id="get_emp_ex"></p>
-						</div>
-					</div>
-					<button type="button" id="Button_check_Experience" class="btn btn-outline-primary">Check Experience</button>
-				</div>
-			</div>
-		</div>
-		<div id="getemployeedetails">
-			<h1>Get Employee Details</h1>
-			<div class="form-group row">
-				<label for="get_address" class="col-sm-2 col-form-label">Employee Address</label>
-				<div class="col-sm-10">
-					<input type="text" class="form-control" id="get_emp_address" placeholder="Address">
-				</div>
-			</div>
-			<div class="form-group row">
-				<label for="displayempinfo" class="col-sm-2 col-form-label"></label>
-				<div class="col-sm-10">
-					<div class="card">
-						<div class="card-body">
-						  <h5 class="card-title">Employee Details:</h5>
-						  <p class="card-text" id="get_emp_details"></p>
-						</div>
-					</div>
-					<button type="button" id="Button_emp_account_details" class="btn btn-outline-primary mt-3">Get Details</button>
-				</div>
-            
-		</div>
-
-
-
-
-
-	</div>
-
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script>
-         if (typeof web3 !== 'undefined') {
-           web3 = new Web3(web3.currentProvider);
-       } else {
-           web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
-       }
-
 	
-       web3.eth.defaultAccount = web3.eth.accounts[0];	    
+	<!-- Favicon  -->
+    <link rel="icon" href="images/favicon.png">
+</head>
+<body data-spy="scroll" data-target=".fixed-top">
+    
+    <!-- Preloader -->
+	<div class="spinner-wrapper">
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+    <!-- end of preloader -->
+    
 
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
+        <!-- Text Logo - Use this if you don't have a graphic logo -->
+        <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Aria</a> -->
 
-	   console.log(web3.eth.accounts[0]);
-	   console.log(web3.eth.Balance);
-       var employeeDetails = web3.eth.contract(
-        [
-	{
-		"inputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "constructor"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "countstudentss",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_address",
-				"type": "address"
-			}
-		],
-		"name": "getDomain",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_address",
-				"type": "address"
-			}
-		],
-		"name": "getEmployeeDetails",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			},
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			},
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_address",
-				"type": "address"
-			}
-		],
-		"name": "getExperience",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "getemloyeess",
-		"outputs": [
-			{
-				"internalType": "address[]",
-				"name": "",
-				"type": "address[]"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_address",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_empid",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "_empname",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_company",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_cadar",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_prevsalary",
-				"type": "uint256"
-			},
-			{
-				"internalType": "bool",
-				"name": "_terminated",
-				"type": "bool"
-			},
-			{
-				"internalType": "string",
-				"name": "_domain",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_feedBack",
-				"type": "string"
-			}
-		],
-		"name": "insertDetails",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_address",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_experience",
-				"type": "uint256"
-			}
-		],
-		"name": "setExperience",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_address",
-				"type": "address"
-			},
-			{
-				"internalType": "string",
-				"name": "_feedBack",
-				"type": "string"
-			}
-		],
-		"name": "setfeedBack",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_address",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_empid",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "_empname",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_company",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_cadar",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_experience",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_prevsalary",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "_domain",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_feedBack",
-				"type": "string"
-			}
-		],
-		"name": "updatedetails",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "valAddress",
-				"type": "address"
-			}
-		],
-		"name": "validateEmployee",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	}
-]
-       );
-       var employee = employeeDetails.at('0x5228a81DD1CF2764C75bf6A383E8F6aED3dc8200');
-
-	   var employer = web3.eth.contract([
-	{
-		"inputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "constructor"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_address",
-				"type": "address"
-			}
-		],
-		"name": "checkELigble",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_address",
-				"type": "address"
-			}
-		],
-		"name": "checkExp",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_address",
-				"type": "address"
-			}
-		],
-		"name": "getEmployeeDetails",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			},
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			},
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_value",
-				"type": "uint256"
-			}
-		],
-		"name": "setEligibilty",
-		"outputs": [],
-		"payable": true,
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_address",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_experience",
-				"type": "uint256"
-			}
-		],
-		"name": "setExp",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"payable": true,
-		"stateMutability": "payable",
-		"type": "function"
-	}
-]);
-		var employee_second = employer.at('0x00c08Bb23C1e9FCd3881FD3868691d0af3C98a62');
-
-
-
+        <!-- Image Logo -->
        
-       $("#Button_insertDetails").click(function() {
-            employee.insertDetails($("#address").val(), $("#empid").val(), $("#empname").val(), $("#cmpname").val(), $("#cadar").val() , $("#prevsal").val(), $("#terminated").val(), $("#domain").val(),$("#feedback").val(), (err, res) => {
-           if (err){
-            console.log(err);
-            }    
-        }); 
-       });
+        <!-- Mobile Menu Toggle Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-awesome fas fa-bars"></span>
+            <span class="navbar-toggler-awesome fas fa-times"></span>
+        </button>
+        <!-- end of mobile menu toggle button -->
 
-       $("#Button_setExperience").click(function() {
-           employee.setExperience($("#Exp_Address").val() ,$("#experience").val(), (err, res) => {
-        if (err){
-            console.log(err);
-            }    
-        });
-       });
-       $("#Button_updateDetails").click(function() {
-           employee.updatedetails($("#update_empaddr").val() ,$("#update_empid").val(), $("#update_empname").val(), $("#update_cmpname").val(), $("#update_cadar").val(),$("#update_Experience").val(),$("#update_prevsal").val(), $("#update_domain").val(),$("#update_feedback").val(), (err, res) => {
-        if (err){
-            console.log(err);
-            }    
-        });
-       });
-       $("#Button_getEmployeeDetails").click(function() {
-            employee.getEmployeeDetails($("#getEmpAddress").val() ,function (error , result) {
-                if(!error) {
-                    $("#get_details").html(result[0]+ "<br/>" + result[1] + "<br/>" +result[2] + "<br/>" +result[3] + "<br/>" +result[4] + "<br/>" +result[5] + "<br/>" +result[6]);
-                }
-                else 
-                    console.log(error);
-            });  
-       });
-       $("#Button_getExperience").click(function() {
-           employee.getExperience($("#getEmpAddr").val() ,function (error , result) {
-               if(!error) {
-                   $("#get_experience").html(result +"<br/>");
-			   }
-			   else
-			   		console.log(error);
-           });
-	   });
-	   $("#Button_accounts").click(function() {
-       		employee.getemloyeess(function(error, result) {
-           if (!error) {
-			   for(i=0;i<result.length;i++){
-               $("#get_accounts").append(result[i]+'<br/>');
-			   console.log(result[i]);
-			   }
-           } else
-                console.log(error);
-       });
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#header">HOME <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#secnav">SERVICES</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#ftr">ABOUT US</a>
+                </li>
 
-	});
+                <!-- Dropdown Menu -->          
+                
+            </ul>
+            
+        </div>
+    </nav> <!-- end of navbar -->
+    <!-- end of navbar -->
 
-		$("#Button_setEligibility").click(function() {
-			employee_second.setEligibilty($("#set_eligibility").val(),(err ,res) => {
-				if(err){
-					console.log(err);
-				}
-			});
-		});
-		$("#Button_set_Experience").click(function() {
-			employee_second.setExp($("#set_address").val() , $("#set_Exp").val() ,(err, res) => {
-				if(err){
-					console.log(err);
-				}
-			});
-		});
-		$("#Button_check_Eligibility").click(function() {
-			employee_second.checkELigble($("#check_address").val() , function (error , result) {
-				if(!error) {
-					$("#get_emp_el").html(result[0] + "<br/>");
-				}
-			});
-		});
-		$("#Button_check_Experience").click(function() {
-			employee_second.checkExp($("#check_exp_address").val() , function (error , result) {
-				if(!error) {
-					$("#get_emp_ex").html(result + "<br/>"); 
-				}
-				
-			});
-		});
-		$("#Button_emp_account_details").click(function() {
-			employee_second.getEmployeeDetails($("#get_emp_address").val() , function (error , result) {
-				if(!error) {
-					$("#get_emp_details").html(result[0]+ "<br/>" + result[1] + "<br/>" +result[2] + "<br/>" +result[3] + "<br/>" +result[4] + "<br/>" +result[5] + "<br/>" +result[6]);
-				}
-				else
-					console.log(error);
-			});
-		});
+
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="header-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="text-container">
+                            <h1>PROFILE <span id="js-rotating">INSERT, UPDATE, VIEW</span></h1>
+                            <p class="p-heading p-large">Profile Management uses BlockChain technology to create a shared ledged for companies to identify employee without any
+                                background work.</p>
+                            <a class="btn-solid-lg page-scroll" href="#secnav">DISCOVER</a>
+                        </div>
+                    </div> <!-- end of col -->
+                </div> <!-- end of row -->
+            </div> <!-- end of container -->
+        </div> <!-- end of header-content -->
+    </header> <!-- end of header -->
+    <!-- end of header -->
+
+
+    <!-- Description -->
+    <div class="cards-1" id="secnav">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    
+                    <!-- Card -->
+                   
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row no-gutters">
+                          <div class="col-md-4">
+                            <img src="images/x.jpg" class="card-img" alt="...">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <h5 class="card-title">Present Company</h5>
+                              <p class="card-text">Here the present company's manager upload the details of the employee for the future company to view.</p>
+                              <button id="btone" class="form-control-submit-button">Click Here</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                    
+                   
+                    <!-- end of card -->
+
+                    <!-- Card -->
+                    <div class="col-lg-6">
+                        <div class="card mb-3" style="max-width: 540px;">
+                            <div class="row no-gutters">
+                              <div class="col-md-4">
+                                <img src="images/y.jpg" class="card-img" alt="...">
+                              </div>
+                              <div class="col-md-8">
+                                <div class="card-body">
+                                  <h5 class="card-title">Future Company</h5>
+                                  <p class="card-text">The future company's manager views the details that are uploaded by the previous Company manager.</p>
+                                  <button id="bttwo" class="form-control-submit-button">Click Here</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+
+                        
+                    
+                    <!-- end of card -->
+
+                    
+
+                 <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of cards-1 -->
+    <!-- end of description -->
 
 
     
-    </script>
+
+    <!-- Call Me -->
+    <div class="form-1" id="first">
+        <div class="container">
+            <h2>Insert Details</h2>
+            <div class="row">
+                
+                <div class="col-lg-6">
+    
+                    <form data-focus="false">
+                        <div class="form-group">
+                            <input type="text" class="form-control-input" id="address">
+                            <label class="label-control" for="lname">Address:</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control-input" id="empid">
+                            <label class="label-control" for="lphone">Employee ID:</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control-input" id="empname">
+                            <label class="label-control" for="lemail">Name:</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control-input" id="cmpname">
+                            <label class="label-control" for="lemail">Company Name:</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control-input" id="cadar">
+                            <label class="label-control" for="lemail">Cadar:</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        
+                    </form>
+                    
+                </div> <!-- end of col -->
+                <div class="col-lg-6">
+                   
+                    <!-- Call Me Form -->
+                    <form  data-focus="false">
+                        <div class="form-group">
+                            <input type="text" class="form-control-input" id="prevsal">
+                            <label class="label-control" for="lname">Previous Salary:</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control-input" id="terminated">
+                            <label class="label-control" for="lphone">Terminated:</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control-input" id="domain">
+                            <label class="label-control" for="lemail">Domain:</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control-input" aria-label="With textarea" id="feedback"></textarea>
+                            <label class="label-control" for="lemail">FeedBack:</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+            
+                        <div class="form-group">
+                            <button type="button" id="Button_insertDetails" class="form-control-submit-button">Insert Details</button>
+                        </div>
+                        <div class="form-message">
+                            <div id="lmsgSubmit" class="h3 text-center hidden"></div>
+                        </div>
+                    </form>
+                    <!-- end of call me form -->
+                    
+                   
+                    
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <h2>Set Experience</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <form data-focus="false">
+                        <div class="form-group">
+                            <input type="text" class="form-control-input" id="Exp_Address">
+                            <label class="label-control" for="lemail">Address:</label>
+                            <div class="help-block with-errors"></div>
+                        </div> 
+                    </form>
+                </div>
+                <div class="col-lg-6">
+                    <form data-focus="false">
+                        <div class="form-group">
+                            <input type="text" class="form-control-input" id="experience">
+                            <label class="label-control" for="lemail">Experience:</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" id="Button_setExperience" class="form-control-submit-button">Set Experience</button>
+                        </div> 
+                    </form>
+                </div>
+
+            </div>
+            <h2>Update Details</h2>
+            <div class="row">
+                
+                <div class="col-lg-6">
+    
+                    <form data-focus="false">
+                        <div class="form-group">
+                            <input type="text" class="form-control-input" id="update_empaddr">
+                            <label class="label-control" for="lname">Address:</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control-input" id="update_empid">
+                            <label class="label-control" for="lphone">Employee ID:</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control-input" id="update_empname">
+                            <label class="label-control" for="lemail">Name:</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control-input" id="update_cmpname">
+                            <label class="label-control" for="lemail">Company Name:</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control-input" id="update_cadar">
+                            <label class="label-control" for="lemail">Cadar:</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        
+                    </form>
+                    
+                </div> <!-- end of col -->
+                <div class="col-lg-6">
+                   
+                    <!-- Call Me Form -->
+                    <form  data-focus="false">
+                        <div class="form-group">
+                            <input type="text" class="form-control-input" id="update_Experience">
+                            <label class="label-control" for="lname">Experience:</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control-input" id="update_prevsal">
+                            <label class="label-control" for="lphone">Previous Salary:</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control-input" id="update_domain">
+                            <label class="label-control" for="lemail">Domain:</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control-input" aria-label="With textarea" id="update_feedback"></textarea>
+                            <label class="label-control" for="lemail">FeedBack:</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+            
+                        <div class="form-group">
+                            <button type="button" id="Button_updateDetails" class="form-control-submit-button">Update Details</button>
+                        </div>
+                        <div class="form-message">
+                            <div id="lmsgSubmit" class="h3 text-center hidden"></div>
+                        </div>
+                    </form>
+                    <!-- end of call me form -->
+                    
+                   
+                    
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <h2>Get Employee Details</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <form data-focus="false">
+                        <div class="form-group">
+                            <input type="text" class="form-control-input" id="getEmpAddress">
+                            <label class="label-control" for="lemail">Address:</label>
+                            <div class="help-block with-errors"></div>
+                        </div> 
+                    </form>
+                </div>
+                <div class="col-lg-6">
+                    <form data-focus="false">
+                        <div class="card">
+                            <div class="card-body">
+                              <h5 class="card-title">Details:</h5>
+                              <p class="card-text" id="get_details"></p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" id="Button_getEmployeeDetails" class="form-control-submit-button">Get Details</button>
+                        </div> 
+                    </form>
+                </div>
+
+            </div>
+            <h2>Get Employee Experience</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <form data-focus="false">
+                        <div class="form-group">
+                            <input type="text" class="form-control-input" id="getEmpAddr">
+                            <label class="label-control" for="lemail">Address:</label>
+                            <div class="help-block with-errors"></div>
+                        </div> 
+                    </form>
+                </div>
+                <div class="col-lg-6">
+                    <form data-focus="false">
+                        <div class="card">
+                            <div class="card-body">
+                              <h5 class="card-title">Experience:</h5>
+                              <p class="card-text" id="get_experience"></p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" id="Button_getExperience" class="form-control-submit-button">Get Experience</button>
+                        </div> 
+                    </form>
+                </div>
+
+            </div>
+            <h2>Get Employee Accounts</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <form data-focus="false">
+                        <div class="form-group">
+                            
+                            
+                            <div class="help-block with-errors"></div>
+                        </div> 
+                    </form>
+                </div>
+                <div class="col-lg-6">
+                    <form data-focus="false">
+                        <div class="card">
+                            <div class="card-body">
+                              <h5 class="card-title">Accounts:</h5>
+                              <p class="card-text" id="get_accounts"></p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" id="Button_accounts" class="form-control-submit-button">Get Accounts</button>
+                        </div> 
+                    </form>
+                </div>
+            </div>
+            
+
+        
+
+
+    
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+        
+        
+            
+    </div> <!-- end of form-1 -->
+    <div class="form-1" id="second">
+        <div class="container">
+            <h2>Set Eligibility</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <form data-focus="false">
+                        <div class="form-group">
+                            <input type="text" class="form-control-input" id="set_eligibility">
+                            <label class="label-control" for="lemail">Eligibility:</label>
+                            <div class="help-block with-errors"></div>
+                        </div> 
+                    </form>
+                </div>
+                <div class="col-lg-6">
+                    <form data-focus="false">
+                        <div class="form-group">
+                            <button type="button" id="Button_setEligibility" class="form-control-submit-button">Set Eligibility</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <h2>Set Experience</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <form data-focus="false">
+                        <div class="form-group">
+                            <input type="text" class="form-control-input" id="set_address">
+                            <label class="label-control" for="lemail">Address:</label>
+                            <div class="help-block with-errors"></div>
+                        </div> 
+                    </form>
+                </div>
+                <div class="col-lg-6">
+                    <form data-focus="false">
+                        <div class="form-group">
+                            <input type="text" class="form-control-input" id="set_Exp">
+                            <label class="label-control" for="lemail">Experience:</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" id="Button_set_Experience" class="form-control-submit-button">Set Experience</button>
+                        </div> 
+                    </form>
+                </div>
+            </div>
+            <h2>Check Eligibility</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <form data-focus="false">
+                        <div class="form-group">
+                            <input type="text" class="form-control-input" id="check_address">
+                            <label class="label-control" for="lemail">Address:</label>
+                            <div class="help-block with-errors"></div>
+                        </div> 
+                    </form>
+                </div>
+                <div class="col-lg-6">
+                    <form data-focus="false">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Eligibility:</h5>
+                                <p class="card-text" id="get_emp_el"></p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" id="Button_check_Eligibility" class="form-control-submit-button">Check Eligibility</button>
+                        </div> 
+                    </form>
+                </div>
+            </div>
+            <h2>Check Experience</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <form data-focus="false">
+                        <div class="form-group">
+                            <input type="text" class="form-control-input" id="check_exp_address">
+                            <label class="label-control" for="lemail">Address:</label>
+                            <div class="help-block with-errors"></div>
+                        </div> 
+                    </form>
+                </div>
+                <div class="col-lg-6">
+                    <form data-focus="false">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Experience:</h5>
+						  <p class="card-text" id="get_emp_ex"></p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" id="Button_check_Experience" class="form-control-submit-button">Check Experience</button>
+                        </div> 
+                    </form>
+                </div>
+            </div>
+            <h2>Get Employee Details</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <form data-focus="false">
+                        <div class="form-group">
+                            <input type="text" class="form-control-input" id="get_emp_address">
+                            <label class="label-control" for="lemail">Address:</label>
+                            <div class="help-block with-errors"></div>
+                        </div> 
+                    </form>
+                </div>
+                <div class="col-lg-6">
+                    <form data-focus="false">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Employee Details:</h5>
+                                <p class="card-text" id="get_emp_details"></p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" id="Button_emp_account_details" class="form-control-submit-button">Get Details</button>
+                        </div> 
+                    </form>
+                </div>
+            </div>
+            
+            
+           
+
+            
+
+
+
+        </div>
+    </div>  
+
+    </div>
+    
+    
+    <!-- end of contact -->
+
+
+    <!-- Footer -->
+    <div class="footer" id="ftr">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="text-container about">
+                        <h4>Few Words About Profile Management</h4>
+                        <p class="white">Profile management is a technology for Companies to help them to know their employees better and recruit them without any third-party Vendors.</p>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-md-2">
+                    <div class="text-container">
+                        <h4>Links</h4>
+                        <ul class="list-unstyled li-space-lg white">
+                            <li>
+                                <a class="white" href="https://github.com/deekshit989/project">Git-Hub</a>
+                            </li>
+                            <li>
+                                <a class="white" href="https://www.blockchain.com/">BlockChain</a>
+                            </li>
+                            <li>
+                                <a class="white" href="https://solidity.readthedocs.io">Solidity</a>
+                            </li>
+                        </ul>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-md-2">
+                    <div class="text-container">
+                        <h4>Tools</h4>
+                        <ul class="list-unstyled li-space-lg">
+                            <li>
+                                <a class="white" href="remix.ethereum.org/">Remix Ide</a>
+                            </li>
+                            <li>
+                               <a class="white" href="https://metamask.io/">MetaMask</a>
+                            </li>
+                            <li class="media">
+                                <a class="white" href="https://code.visualstudio.com/">Visual Studio</a>
+                            </li>
+                        </ul>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-md-2">
+                    <div class="text-container">
+                        <h4>Utilities</h4>
+                        <ul class="list-unstyled li-space-lg">
+                            <li>
+                                <a class="white" href="https://nodejs.org/en/">Node Js</a>
+                            </li>
+                            <li>
+                                <a class="white" href="https://www.npmjs.com/package/lite-server">Lite-Server</a>
+                            </li>
+                            <li>
+                                <a class="white" href="https://web3js.readthedocs.io/en/v1.2.7/">WEB-3 Js</a>
+                            </li>
+                        </ul>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of footer -->  
+    <!-- end of footer -->
+
+
+    <!-- Copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="p-small">Copyright © 2020 By Team Bro-Code</a></p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright --> 
+    <!-- end of copyright -->
+    
+    	
+    <!-- Scripts -->
+    <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
+    <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+    
+    
+    <script src="js/morphext.min.js"></script> <!-- Morphtext rotating text in the header -->
+    
+    <script src="js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
+    <script src="js/scripts.js"></script> <!-- Custom scripts -->
+    <script>
+
+        $(document).ready (function () {
+            $("#first").hide();
+            $("#second").hide();
+        });
+
+
+        $("#btone").click(function() {
+            $("#first").fadeToggle();
+        });
+        $("#bttwo").click(function() {
+            $("#second").fadeToggle();
+        });
+
+      
+
+        if (typeof web3 !== 'undefined') {
+          web3 = new Web3(web3.currentProvider);
+      } else {
+          web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+      }
+
+   
+      web3.eth.defaultAccount = web3.eth.accounts[0];	    
+
+
+      console.log(web3.eth.accounts[0]);
+      console.log(web3.eth.Balance);
+      var employeeDetails = web3.eth.contract(
+       [
+   {
+       "inputs": [],
+       "payable": false,
+       "stateMutability": "nonpayable",
+       "type": "constructor"
+   },
+   {
+       "constant": true,
+       "inputs": [],
+       "name": "countstudentss",
+       "outputs": [
+           {
+               "internalType": "uint256",
+               "name": "",
+               "type": "uint256"
+           }
+       ],
+       "payable": false,
+       "stateMutability": "view",
+       "type": "function"
+   },
+   {
+       "constant": true,
+       "inputs": [
+           {
+               "internalType": "address",
+               "name": "_address",
+               "type": "address"
+           }
+       ],
+       "name": "getDomain",
+       "outputs": [
+           {
+               "internalType": "string",
+               "name": "",
+               "type": "string"
+           }
+       ],
+       "payable": false,
+       "stateMutability": "view",
+       "type": "function"
+   },
+   {
+       "constant": true,
+       "inputs": [
+           {
+               "internalType": "address",
+               "name": "_address",
+               "type": "address"
+           }
+       ],
+       "name": "getEmployeeDetails",
+       "outputs": [
+           {
+               "internalType": "uint256",
+               "name": "",
+               "type": "uint256"
+           },
+           {
+               "internalType": "string",
+               "name": "",
+               "type": "string"
+           },
+           {
+               "internalType": "string",
+               "name": "",
+               "type": "string"
+           },
+           {
+               "internalType": "string",
+               "name": "",
+               "type": "string"
+           },
+           {
+               "internalType": "uint256",
+               "name": "",
+               "type": "uint256"
+           },
+           {
+               "internalType": "bool",
+               "name": "",
+               "type": "bool"
+           },
+           {
+               "internalType": "string",
+               "name": "",
+               "type": "string"
+           }
+       ],
+       "payable": false,
+       "stateMutability": "view",
+       "type": "function"
+   },
+   {
+       "constant": true,
+       "inputs": [
+           {
+               "internalType": "address",
+               "name": "_address",
+               "type": "address"
+           }
+       ],
+       "name": "getExperience",
+       "outputs": [
+           {
+               "internalType": "uint256",
+               "name": "",
+               "type": "uint256"
+           }
+       ],
+       "payable": false,
+       "stateMutability": "view",
+       "type": "function"
+   },
+   {
+       "constant": true,
+       "inputs": [],
+       "name": "getemloyeess",
+       "outputs": [
+           {
+               "internalType": "address[]",
+               "name": "",
+               "type": "address[]"
+           }
+       ],
+       "payable": false,
+       "stateMutability": "view",
+       "type": "function"
+   },
+   {
+       "constant": false,
+       "inputs": [
+           {
+               "internalType": "address",
+               "name": "_address",
+               "type": "address"
+           },
+           {
+               "internalType": "uint256",
+               "name": "_empid",
+               "type": "uint256"
+           },
+           {
+               "internalType": "string",
+               "name": "_empname",
+               "type": "string"
+           },
+           {
+               "internalType": "string",
+               "name": "_company",
+               "type": "string"
+           },
+           {
+               "internalType": "string",
+               "name": "_cadar",
+               "type": "string"
+           },
+           {
+               "internalType": "uint256",
+               "name": "_prevsalary",
+               "type": "uint256"
+           },
+           {
+               "internalType": "bool",
+               "name": "_terminated",
+               "type": "bool"
+           },
+           {
+               "internalType": "string",
+               "name": "_domain",
+               "type": "string"
+           },
+           {
+               "internalType": "string",
+               "name": "_feedBack",
+               "type": "string"
+           }
+       ],
+       "name": "insertDetails",
+       "outputs": [],
+       "payable": false,
+       "stateMutability": "nonpayable",
+       "type": "function"
+   },
+   {
+       "constant": false,
+       "inputs": [
+           {
+               "internalType": "address",
+               "name": "_address",
+               "type": "address"
+           },
+           {
+               "internalType": "uint256",
+               "name": "_experience",
+               "type": "uint256"
+           }
+       ],
+       "name": "setExperience",
+       "outputs": [],
+       "payable": false,
+       "stateMutability": "nonpayable",
+       "type": "function"
+   },
+   {
+       "constant": false,
+       "inputs": [
+           {
+               "internalType": "address",
+               "name": "_address",
+               "type": "address"
+           },
+           {
+               "internalType": "string",
+               "name": "_feedBack",
+               "type": "string"
+           }
+       ],
+       "name": "setfeedBack",
+       "outputs": [],
+       "payable": false,
+       "stateMutability": "nonpayable",
+       "type": "function"
+   },
+   {
+       "constant": false,
+       "inputs": [
+           {
+               "internalType": "address",
+               "name": "_address",
+               "type": "address"
+           },
+           {
+               "internalType": "uint256",
+               "name": "_empid",
+               "type": "uint256"
+           },
+           {
+               "internalType": "string",
+               "name": "_empname",
+               "type": "string"
+           },
+           {
+               "internalType": "string",
+               "name": "_company",
+               "type": "string"
+           },
+           {
+               "internalType": "string",
+               "name": "_cadar",
+               "type": "string"
+           },
+           {
+               "internalType": "uint256",
+               "name": "_experience",
+               "type": "uint256"
+           },
+           {
+               "internalType": "uint256",
+               "name": "_prevsalary",
+               "type": "uint256"
+           },
+           {
+               "internalType": "string",
+               "name": "_domain",
+               "type": "string"
+           },
+           {
+               "internalType": "string",
+               "name": "_feedBack",
+               "type": "string"
+           }
+       ],
+       "name": "updatedetails",
+       "outputs": [],
+       "payable": false,
+       "stateMutability": "nonpayable",
+       "type": "function"
+   },
+   {
+       "constant": true,
+       "inputs": [
+           {
+               "internalType": "address",
+               "name": "valAddress",
+               "type": "address"
+           }
+       ],
+       "name": "validateEmployee",
+       "outputs": [
+           {
+               "internalType": "bool",
+               "name": "",
+               "type": "bool"
+           }
+       ],
+       "payable": false,
+       "stateMutability": "view",
+       "type": "function"
+   }
+]
+      );
+      var employee = employeeDetails.at('0xCEDac6Bdd07cfDF92D82fDc4E6F8111b4601c684');
+
+      var employer = web3.eth.contract([
+   {
+       "inputs": [],
+       "payable": false,
+       "stateMutability": "nonpayable",
+       "type": "constructor"
+   },
+   {
+       "constant": true,
+       "inputs": [
+           {
+               "internalType": "address",
+               "name": "_address",
+               "type": "address"
+           }
+       ],
+       "name": "checkELigble",
+       "outputs": [
+           {
+               "internalType": "string",
+               "name": "",
+               "type": "string"
+           }
+       ],
+       "payable": false,
+       "stateMutability": "view",
+       "type": "function"
+   },
+   {
+       "constant": true,
+       "inputs": [
+           {
+               "internalType": "address",
+               "name": "_address",
+               "type": "address"
+           }
+       ],
+       "name": "checkExp",
+       "outputs": [
+           {
+               "internalType": "uint256",
+               "name": "",
+               "type": "uint256"
+           }
+       ],
+       "payable": false,
+       "stateMutability": "view",
+       "type": "function"
+   },
+   {
+       "constant": true,
+       "inputs": [
+           {
+               "internalType": "address",
+               "name": "_address",
+               "type": "address"
+           }
+       ],
+       "name": "getEmployeeDetails",
+       "outputs": [
+           {
+               "internalType": "uint256",
+               "name": "",
+               "type": "uint256"
+           },
+           {
+               "internalType": "string",
+               "name": "",
+               "type": "string"
+           },
+           {
+               "internalType": "string",
+               "name": "",
+               "type": "string"
+           },
+           {
+               "internalType": "string",
+               "name": "",
+               "type": "string"
+           },
+           {
+               "internalType": "uint256",
+               "name": "",
+               "type": "uint256"
+           },
+           {
+               "internalType": "bool",
+               "name": "",
+               "type": "bool"
+           },
+           {
+               "internalType": "string",
+               "name": "",
+               "type": "string"
+           }
+       ],
+       "payable": false,
+       "stateMutability": "view",
+       "type": "function"
+   },
+   {
+       "constant": false,
+       "inputs": [
+           {
+               "internalType": "uint256",
+               "name": "_value",
+               "type": "uint256"
+           }
+       ],
+       "name": "setEligibilty",
+       "outputs": [],
+       "payable": true,
+       "stateMutability": "payable",
+       "type": "function"
+   },
+   {
+       "constant": false,
+       "inputs": [
+           {
+               "internalType": "address",
+               "name": "_address",
+               "type": "address"
+           },
+           {
+               "internalType": "uint256",
+               "name": "_experience",
+               "type": "uint256"
+           }
+       ],
+       "name": "setExp",
+       "outputs": [
+           {
+               "internalType": "string",
+               "name": "",
+               "type": "string"
+           }
+       ],
+       "payable": true,
+       "stateMutability": "payable",
+       "type": "function"
+   }
+]);
+       var employee_second = employer.at('0xF68177397a1E181A63C1058bC3c80Ad0E3817eB3');
+
+
+
+      
+      $("#Button_insertDetails").click(function() {
+           employee.insertDetails($("#address").val(), $("#empid").val(), $("#empname").val(), $("#cmpname").val(), $("#cadar").val() , $("#prevsal").val(), $("#terminated").val(), $("#domain").val(),$("#feedback").val(), (err, res) => {
+          if (err){
+           console.log(err);
+           }    
+       }); 
+      });
+
+      $("#Button_setExperience").click(function() {
+          employee.setExperience($("#Exp_Address").val() ,$("#experience").val(), (err, res) => {
+       if (err){
+           console.log(err);
+           }    
+       });
+      });
+      $("#Button_updateDetails").click(function() {
+          employee.updatedetails($("#update_empaddr").val() ,$("#update_empid").val(), $("#update_empname").val(), $("#update_cmpname").val(), $("#update_cadar").val(),$("#update_Experience").val(),$("#update_prevsal").val(), $("#update_domain").val(),$("#update_feedback").val(), (err, res) => {
+       if (err){
+           console.log(err);
+           }    
+       });
+      });
+      $("#Button_getEmployeeDetails").click(function() {
+           employee.getEmployeeDetails($("#getEmpAddress").val() ,function (error , result) {
+               if(!error) {
+                   $("#get_details").html(result[0]+ "<br/>" + result[1] + "<br/>" +result[2] + "<br/>" +result[3] + "<br/>" +result[4] + "<br/>" +result[5] + "<br/>" +result[6]);
+               }
+               else 
+                   console.log(error);
+           });  
+      });
+      $("#Button_getExperience").click(function() {
+          employee.getExperience($("#getEmpAddr").val() ,function (error , result) {
+              if(!error) {
+                  $("#get_experience").html(result +"<br/>");
+              }
+              else
+                      console.log(error);
+          });
+      });
+      $("#Button_accounts").click(function() {
+              employee.getemloyeess(function(error, result) {
+          if (!error) {
+              for(i=0;i<result.length;i++){
+              $("#get_accounts").append(result[i]+'<br/>');
+              console.log(result[i]);
+              }
+          } else
+               console.log(error);
+      });
+
+   });
+
+       $("#Button_setEligibility").click(function() {
+           employee_second.setEligibilty($("#set_eligibility").val(),(err ,res) => {
+               if(err){
+                   console.log(err);
+               }
+           });
+       });
+       $("#Button_set_Experience").click(function() {
+           employee_second.setExp($("#set_address").val() , $("#set_Exp").val() ,(err, res) => {
+               if(err){
+                   console.log(err);
+               }
+           });
+       });
+       $("#Button_check_Eligibility").click(function() {
+           employee_second.checkELigble($("#check_address").val() , function (error , result) {
+               if(!error) {
+                   $("#get_emp_el").html(result[0] + "<br/>");
+               }
+           });
+       });
+       $("#Button_check_Experience").click(function() {
+           employee_second.checkExp($("#check_exp_address").val() , function (error , result) {
+               if(!error) {
+                   $("#get_emp_ex").html(result + "<br/>"); 
+               }
+               
+           });
+       });
+       $("#Button_emp_account_details").click(function() {
+           employee_second.getEmployeeDetails($("#get_emp_address").val() , function (error , result) {
+               if(!error) {
+                   $("#get_emp_details").html(result[0]+ "<br/>" + result[1] + "<br/>" +result[2] + "<br/>" +result[3] + "<br/>" +result[4] + "<br/>" +result[5] + "<br/>" +result[6]);
+               }
+               else
+                   console.log(error);
+           });
+       });
+
+
+   
+   </script>
 </body>
 </html>
